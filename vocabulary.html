@@ -1052,6 +1052,576 @@
           color: #666;
         }
       }
+
+      /* Word Details Panel */
+      .flashcard-container {
+        display: flex;
+        gap: 20px;
+        width: 90%;
+        max-width: 1200px;
+      }
+
+      .word-details-panel {
+        flex: 1;
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+        max-height: 600px;
+        display: none; /* Initially hidden */
+      }
+
+      .dark-mode .word-details-panel {
+        background: #1a1a2e;
+        color: #e1e1e1;
+      }
+
+      .word-details-header {
+        margin-bottom: 20px;
+      }
+
+      .word-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .phonetics {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .phonetic-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .pronunciation-btn {
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .pronunciation-btn:hover {
+        background: #2980b9;
+      }
+
+      .meaning-section {
+        margin-bottom: 20px;
+      }
+
+      .part-of-speech {
+        font-size: 18px;
+        font-weight: 500;
+        color: #3498db;
+        margin-bottom: 10px;
+      }
+
+      .dark-mode .part-of-speech {
+        color: #4ecca3;
+      }
+
+      .definition-list {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .definition-item {
+        margin-bottom: 15px;
+        padding-left: 15px;
+        border-left: 3px solid #3498db;
+      }
+
+      .dark-mode .definition-item {
+        border-left-color: #4ecca3;
+      }
+
+      .example {
+        margin-top: 5px;
+        font-style: italic;
+        color: #666;
+      }
+
+      .dark-mode .example {
+        color: #a5a5a5;
+      }
+
+      .synonyms,
+      .antonyms {
+        margin-top: 10px;
+      }
+
+      .synonyms span,
+      .antonyms span {
+        display: inline-block;
+        margin: 3px;
+        padding: 3px 8px;
+        background: #f0f0f0;
+        border-radius: 12px;
+        font-size: 14px;
+      }
+
+      .dark-mode .synonyms span,
+      .dark-mode .antonyms span {
+        background: #16213e;
+      }
+
+      .loading-indicator {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+      }
+
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #3498db;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      /* Dictionary Panel Styles */
+      .flashcard-container {
+        display: flex;
+        gap: 20px;
+        width: 90%;
+        max-width: 1200px;
+      }
+
+      .card-section {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .dictionary-panel {
+        flex: 1;
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-height: 600px;
+        overflow-y: auto;
+      }
+
+      .dark-mode .dictionary-panel {
+        background: #1a1a2e;
+        color: #e1e1e1;
+      }
+
+      .dictionary-content h3 {
+        color: #3498db;
+        margin-bottom: 20px;
+      }
+
+      .dark-mode .dictionary-content h3 {
+        color: #4ecca3;
+      }
+
+      .phonetic-section {
+        margin-bottom: 20px;
+      }
+
+      .phonetic-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+
+      .phonetic-text {
+        font-family: monospace;
+        font-size: 1.1em;
+      }
+
+      .meaning-section {
+        margin-bottom: 25px;
+      }
+
+      .part-of-speech {
+        color: #3498db;
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-bottom: 10px;
+      }
+
+      .dark-mode .part-of-speech {
+        color: #4ecca3;
+      }
+
+      .definition-item {
+        margin-bottom: 15px;
+        padding-left: 15px;
+        border-left: 3px solid #3498db;
+      }
+
+      .dark-mode .definition-item {
+        border-left-color: #4ecca3;
+      }
+
+      .definition-text {
+        margin-bottom: 5px;
+      }
+
+      .example-text {
+        color: #666;
+        font-style: italic;
+        margin-top: 5px;
+      }
+
+      .dark-mode .example-text {
+        color: #a5a5a5;
+      }
+
+      .synonyms-section,
+      .antonyms-section {
+        margin-top: 10px;
+      }
+
+      .word-tag {
+        display: inline-block;
+        background: #f0f0f0;
+        padding: 3px 8px;
+        border-radius: 12px;
+        margin: 3px;
+        font-size: 0.9em;
+      }
+
+      .dark-mode .word-tag {
+        background: #16213e;
+      }
+
+      /* Dictionary Button Styles */
+      .card-actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 10px;
+      }
+
+      .dictionary-btn {
+        background: #9b59b6;
+      }
+
+      .dictionary-btn:hover {
+        background: #8e44ad;
+      }
+      /* Dictionary Overlay */
+      .dictionary-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 2000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+
+      /* Dictionary Panel */
+      .dictionary-panel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        width: 90%;
+        max-width: 600px;
+        max-height: 85vh;
+        margin: 0;
+        animation: slideIn 0.3s ease-out;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Dictionary Header */
+      .dictionary-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 24px;
+        border-bottom: 1px solid #eef2f5;
+        background: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+      }
+
+      .dictionary-header h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #2d3436;
+        margin: 0;
+      }
+
+      .close-dictionary-btn {
+        background: none;
+        border: none;
+        color: #636e72;
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+        width: 36px;
+        height: 36px;
+      }
+
+      .close-dictionary-btn:hover {
+        background: #f5f6fa;
+        color: #e74c3c;
+      }
+
+      /* Dictionary Content */
+      .dictionary-content {
+        padding: 20px 24px;
+        overflow-y: auto;
+        max-height: calc(85vh - 80px);
+      }
+
+      /* Phonetic Section */
+      .phonetic-section {
+        margin-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .phonetic-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #f5f6fa;
+        padding: 8px 16px;
+        border-radius: 50px;
+      }
+
+      .phonetic-text {
+        color: #2d3436;
+        font-family: monospace;
+        font-size: 1rem;
+      }
+
+      /* Pronunciation Button */
+      .pronunciation-btn {
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        padding: 0;
+      }
+
+      .pronunciation-btn:hover {
+        background: #2980b9;
+        transform: scale(1.1);
+      }
+
+      /* Meaning Section */
+      .meaning-section {
+        margin-bottom: 28px;
+      }
+
+      .part-of-speech {
+        color: #3498db;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+        text-transform: capitalize;
+      }
+
+      .definition-item {
+        margin-bottom: 16px;
+        padding-left: 16px;
+        border-left: 3px solid #3498db;
+      }
+
+      .definition-text {
+        color: #2d3436;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0 0 8px 0;
+      }
+
+      .example-text {
+        color: #636e72;
+        font-style: italic;
+        font-size: 0.95rem;
+        margin: 8px 0 0 0;
+        line-height: 1.4;
+      }
+
+      /* Word Tags */
+      .synonyms-section,
+      .antonyms-section {
+        margin-top: 16px;
+      }
+
+      .word-tag {
+        display: inline-block;
+        background: #f5f6fa;
+        color: #2d3436;
+        padding: 4px 12px;
+        border-radius: 50px;
+        margin: 4px;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+      }
+
+      .word-tag:hover {
+        background: #e2e8f0;
+      }
+
+      /* Loading State */
+      .loading {
+        text-align: center;
+        padding: 40px;
+        color: #636e72;
+        font-size: 1rem;
+      }
+
+      /* Error Message */
+      .error-message {
+        text-align: center;
+        padding: 40px;
+        color: #e74c3c;
+        font-size: 1rem;
+      }
+
+      /* Dark Mode Styles */
+      .dark-mode .dictionary-panel {
+        background: #1a1a2e;
+        border: 1px solid #30475e;
+      }
+
+      .dark-mode .dictionary-header {
+        background: #1a1a2e;
+        border-bottom-color: #30475e;
+      }
+
+      .dark-mode .dictionary-header h3 {
+        color: #fff;
+      }
+
+      .dark-mode .close-dictionary-btn {
+        color: #a5a5a5;
+      }
+
+      .dark-mode .close-dictionary-btn:hover {
+        background: #222831;
+        color: #e74c3c;
+      }
+
+      .dark-mode .phonetic-item {
+        background: #222831;
+      }
+
+      .dark-mode .phonetic-text {
+        color: #fff;
+      }
+
+      .dark-mode .definition-text {
+        color: #fff;
+      }
+
+      .dark-mode .example-text {
+        color: #a5a5a5;
+      }
+
+      .dark-mode .word-tag {
+        background: #222831;
+        color: #fff;
+      }
+
+      .dark-mode .word-tag:hover {
+        background: #30475e;
+      }
+
+      /* Animation */
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translate(-50%, -60%);
+        }
+        to {
+          opacity: 1;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      /* Scrollbar Styles */
+      .dictionary-content::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .dictionary-content::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      .dictionary-content::-webkit-scrollbar-thumb {
+        background: #cbd5e0;
+        border-radius: 4px;
+      }
+
+      .dark-mode .dictionary-content::-webkit-scrollbar-thumb {
+        background: #30475e;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .dictionary-panel {
+          width: 95%;
+          max-height: 90vh;
+        }
+
+        .dictionary-header {
+          padding: 16px 20px;
+        }
+
+        .dictionary-content {
+          padding: 16px 20px;
+          max-height: calc(90vh - 70px);
+        }
+      }
+      /* Dictionary Styles */
     </style>
   </head>
   <body>
@@ -1165,40 +1735,62 @@
     <!-- Flashcard Modal -->
     <div class="flashcard-modal" id="flashcardModal">
       <div class="flashcard-container">
-        <div class="flashcard">
-          <!-- Mặt trước của flashcard -->
-          <div class="card-face front">
-            <div class="card-content">
-              <div class="card-image"></div>
-              <div class="card-word"></div>
-              <button
-                class="audio-btn action-btn"
-                onclick="event.stopPropagation(); vocabularyManager.playAudio(document.querySelector('.card-word').textContent)"
-              >
-                <i class="fas fa-volume-up"></i>
-              </button>
+        <div class="card-section">
+          <div class="flashcard">
+            <div class="card-face front">
+              <div class="card-content">
+                <div class="card-image"></div>
+                <div class="card-word"></div>
+                <div class="card-actions">
+                  <button
+                    class="audio-btn action-btn"
+                    onclick="event.stopPropagation(); vocabularyManager.playAudio(document.querySelector('.card-word').textContent)"
+                  >
+                    <i class="fas fa-volume-up"></i>
+                  </button>
+                  <button
+                    class="dictionary-btn action-btn"
+                    onclick="event.stopPropagation(); vocabularyManager.toggleDictionary()"
+                  >
+                    <i class="fas fa-book"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="card-face back">
+              <div class="card-content">
+                <div class="card-meaning"></div>
+              </div>
             </div>
           </div>
-
-          <!-- Mặt sau của flashcard -->
-          <div class="card-face back">
-            <div class="card-content">
-              <div class="card-meaning"></div>
-            </div>
+          <div class="card-controls">
+            <button onclick="vocabularyManager.previousCard()">
+              <i class="fas fa-chevron-left"></i> Previous
+            </button>
+            <button onclick="vocabularyManager.closeFlashcards()">
+              <i class="fas fa-times"></i> Close
+            </button>
+            <button onclick="vocabularyManager.nextCard()">
+              Next <i class="fas fa-chevron-right"></i>
+            </button>
           </div>
         </div>
 
-        <!-- Các nút điều khiển -->
-        <div class="card-controls">
-          <button onclick="vocabularyManager.previousCard()">
-            <i class="fas fa-chevron-left"></i> Previous
-          </button>
-          <button onclick="vocabularyManager.closeFlashcards()">
-            <i class="fas fa-times"></i> Close
-          </button>
-          <button onclick="vocabularyManager.nextCard()">
-            Next <i class="fas fa-chevron-right"></i>
-          </button>
+        <!-- Dictionary Panel -->
+        <!-- Dictionary Panel -->
+        <!-- Dictionary Panel -->
+        <div class="dictionary-overlay" id="dictionaryOverlay">
+          <div class="dictionary-panel" id="dictionaryPanel">
+            <div class="dictionary-header">
+              <h3>Dictionary</h3>
+              <button class="close-dictionary-btn" id="closeDictionaryBtn">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+            <div class="dictionary-content" id="dictionaryContent">
+              <div class="dictionary-data"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1419,7 +2011,122 @@
             this.showNotification("Couldn't save vocabulary", "error");
           }
         }
+        // Add these methods inside the VocabularyManager class, before the last closing brace
+        async fetchWordDetails(word) {
+          try {
+            const response = await fetch(
+              `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(
+                word
+              )}`
+            );
+            if (!response.ok) {
+              throw new Error("Word not found");
+            }
+            return await response.json();
+          } catch (error) {
+            console.error("Error fetching word details:", error);
+            return null;
+          }
+        }
 
+        async updateWordDetails(word) {
+          const detailsPanel = document.getElementById("wordDetailsPanel");
+          detailsPanel.style.display = "block";
+
+          // Show loading indicator
+          detailsPanel.innerHTML = `
+    <div class="loading-indicator">
+      <div class="loading-spinner"></div>
+    </div>
+  `;
+
+          const details = await this.fetchWordDetails(word);
+
+          if (!details || !details.length) {
+            detailsPanel.innerHTML = `
+      <div class="word-details-header">
+        <div class="word-title">${word}</div>
+        <p>No detailed information found for this word.</p>
+      </div>
+    `;
+            return;
+          }
+
+          const wordData = details[0];
+          let html = `
+    <div class="word-details-header">
+      <div class="word-title">${wordData.word}</div>
+      <div class="phonetics">
+  `;
+
+          // Add phonetics with audio
+          wordData.phonetics.forEach((phonetic) => {
+            if (phonetic.text && phonetic.audio) {
+              html += `
+        <div class="phonetic-item">
+          <span>${phonetic.text}</span>
+          <button class="pronunciation-btn" onclick="vocabularyManager.playAudioUrl('${phonetic.audio}')">
+            <i class="fas fa-volume-up"></i>
+          </button>
+        </div>
+      `;
+            }
+          });
+
+          html += `</div>`; // Close phonetics div
+
+          // Add meanings
+          wordData.meanings.forEach((meaning) => {
+            html += `
+      <div class="meaning-section">
+        <div class="part-of-speech">${meaning.partOfSpeech}</div>
+        <ul class="definition-list">
+    `;
+
+            meaning.definitions.forEach((def) => {
+              html += `
+        <li class="definition-item">
+          <div class="definition">${def.definition}</div>
+          ${def.example ? `<div class="example">"${def.example}"</div>` : ""}
+        </li>
+      `;
+            });
+
+            // Add synonyms and antonyms if available
+            if (meaning.synonyms.length > 0) {
+              html += `
+        <div class="synonyms">
+          <strong>Synonyms: </strong>
+          ${meaning.synonyms.map((s) => `<span>${s}</span>`).join("")}
+        </div>
+      `;
+            }
+
+            if (meaning.antonyms.length > 0) {
+              html += `
+        <div class="antonyms">
+          <strong>Antonyms: </strong>
+          ${meaning.antonyms.map((a) => `<span>${a}</span>`).join("")}
+        </div>
+      `;
+            }
+
+            html += `
+        </ul>
+      </div>
+    `;
+          });
+
+          detailsPanel.innerHTML = html;
+        }
+
+        playAudioUrl(url) {
+          const audio = new Audio(url);
+          audio.play().catch((error) => {
+            console.error("Error playing audio:", error);
+            this.showNotification("Could not play pronunciation", "error");
+          });
+        }
         checkAndUpdateLevels() {
           const now = Date.now();
           let hasChanges = false;
@@ -1677,28 +2384,44 @@
             }
           });
         }
+        toggleDictionary() {
+          const dictionaryPanel = document.getElementById("dictionaryPanel");
+          const overlay = document.querySelector(".dictionary-overlay");
+          const isVisible = dictionaryPanel.style.display === "block";
 
-        showFlashcards(level) {
-          const words = this.vocabulary.filter((word) => word.level === level);
-          if (words.length === 0) {
-            this.showNotification("No words at this level", "error");
-            return;
+          if (!overlay) {
+            const newOverlay = document.createElement("div");
+            newOverlay.className = "dictionary-overlay";
+            document.body.appendChild(newOverlay);
+
+            // Fix: Add stopPropagation to prevent click events from bubbling up
+            newOverlay.addEventListener("click", (e) => {
+              e.stopPropagation();
+              if (e.target === newOverlay) {
+                this.toggleDictionary();
+              }
+            });
           }
 
-          this.currentLevel = level;
-          this.currentCardIndex = 0;
-          this.updateFlashcard();
-          document.getElementById("flashcardModal").style.display = "flex";
+          if (!isVisible) {
+            dictionaryPanel.style.display = "block";
+            overlay.style.display = "block";
+            const currentWord =
+              document.querySelector(".card-word").textContent;
+            this.fetchAndDisplayDictionary(currentWord);
+            document.body.style.overflow = "hidden";
 
-          const flashcard = document.querySelector(".flashcard");
-          if (flashcard) {
-            const oldFlashcard = flashcard.cloneNode(true);
-            flashcard.parentNode.replaceChild(oldFlashcard, flashcard);
-            oldFlashcard.addEventListener("click", (e) => this.flipCard(e));
+            // Fix: Add z-index to ensure dictionary panel is above other elements
+            dictionaryPanel.style.zIndex = "1051";
+            overlay.style.zIndex = "1050";
+          } else {
+            dictionaryPanel.style.display = "none";
+            overlay.style.display = "none";
+            document.body.style.overflow = "auto";
           }
         }
 
-        updateFlashcard() {
+        async updateFlashcard() {
           const words = this.vocabulary.filter(
             (word) => word.level === this.currentLevel
           );
@@ -1721,19 +2444,203 @@
 
             const flashcard = document.querySelector(".flashcard");
             flashcard.classList.remove("flipped");
+
+            // Reset dictionary panel display
+            const dictionaryPanel = document.getElementById("dictionaryPanel");
+            dictionaryPanel.style.display = "none";
+            const overlay = document.querySelector(".dictionary-overlay");
+            if (overlay) {
+              overlay.style.display = "none";
+            }
           }
         }
 
+        async fetchAndDisplayDictionary(word) {
+          const dictionaryPanel = document.querySelector(".dictionary-data");
+
+          try {
+            const response = await fetch(
+              `https://api.dictionaryapi.dev/api/v2/entries/en/${encodeURIComponent(
+                word
+              )}`
+            );
+            if (!response.ok) throw new Error("Word not found");
+
+            const data = await response.json();
+            if (data && data.length > 0) {
+              const wordData = data[0];
+              let html = '<div class="dictionary-content">';
+
+              // Phonetics section with improved audio buttons
+              if (wordData.phonetics && wordData.phonetics.length > 0) {
+                html += '<div class="phonetic-section">';
+                wordData.phonetics.forEach((phonetic) => {
+                  if (phonetic.text || phonetic.audio) {
+                    html += `
+                            <div class="phonetic-item">
+                                ${
+                                  phonetic.text
+                                    ? `<span class="phonetic-text">${phonetic.text}</span>`
+                                    : ""
+                                }
+                                ${
+                                  phonetic.audio
+                                    ? `
+                                    <button class="pronunciation-btn" onclick="vocabularyManager.playAudioUrl('${phonetic.audio}')">
+                                        <i class="fas fa-volume-up"></i>
+                                    </button>
+                                `
+                                    : ""
+                                }
+                            </div>
+                        `;
+                  }
+                });
+                html += "</div>";
+              }
+
+              // Meanings section
+              if (wordData.meanings) {
+                wordData.meanings.forEach((meaning) => {
+                  html += `
+                        <div class="meaning-section">
+                            <h4 class="part-of-speech">${meaning.partOfSpeech}</h4>
+                            <div class="definitions">
+                    `;
+
+                  meaning.definitions.forEach((def) => {
+                    html += `
+                            <div class="definition-item">
+                                <p class="definition-text">• ${
+                                  def.definition
+                                }</p>
+                                ${
+                                  def.example
+                                    ? `<p class="example-text">"${def.example}"</p>`
+                                    : ""
+                                }
+                            </div>
+                        `;
+                  });
+
+                  if (meaning.synonyms && meaning.synonyms.length > 0) {
+                    html += `
+                            <div class="synonyms-section">
+                                <strong>Synonyms:</strong>
+                                ${meaning.synonyms
+                                  .map(
+                                    (s) => `<span class="word-tag">${s}</span>`
+                                  )
+                                  .join(" ")}
+                            </div>
+                        `;
+                  }
+
+                  if (meaning.antonyms && meaning.antonyms.length > 0) {
+                    html += `
+                            <div class="antonyms-section">
+                                <strong>Antonyms:</strong>
+                                ${meaning.antonyms
+                                  .map(
+                                    (a) => `<span class="word-tag">${a}</span>`
+                                  )
+                                  .join(" ")}
+                            </div>
+                        `;
+                  }
+
+                  html += `
+                            </div>
+                        </div>
+                    `;
+                });
+              }
+
+              html += "</div>";
+              dictionaryPanel.innerHTML = html;
+            }
+          } catch (error) {
+            dictionaryPanel.innerHTML = `
+            <div class="error-message">
+                No dictionary data available for "${word}"
+            </div>
+        `;
+          }
+        }
+        showFlashcards(level) {
+          const words = this.vocabulary.filter((word) => word.level === level);
+          if (words.length === 0) {
+            this.showNotification("No words at this level", "error");
+            return;
+          }
+
+          this.currentLevel = level;
+          this.currentCardIndex = 0;
+
+          const flashcardModal = document.getElementById("flashcardModal");
+          flashcardModal.style.display = "flex";
+
+          // Gọi updateFlashcard để hiển thị từ đầu tiên và thông tin từ điển
+          this.updateFlashcard();
+
+          const flashcard = document.querySelector(".flashcard");
+          if (flashcard) {
+            const oldFlashcard = flashcard.cloneNode(true);
+            flashcard.parentNode.replaceChild(oldFlashcard, flashcard);
+            oldFlashcard.addEventListener("click", (e) => this.flipCard(e));
+          }
+        }
+        playAudioUrl(url) {
+          const audio = new Audio(url);
+          audio.play().catch((error) => {
+            console.error("Error playing audio:", error);
+            this.showNotification("Could not play pronunciation", "error");
+          });
+        }
+
         flipCard(event) {
+          // Kiểm tra xem click có phải từ các phần tử không nên gây lật thẻ
           if (
             event &&
-            (event.target.closest(".audio-btn") ||
+            (event.target.closest(".dictionary-panel") ||
+              event.target.closest(".dictionary-overlay") ||
+              event.target.closest(".audio-btn") ||
+              event.target.closest(".dictionary-btn") ||
               event.target.closest(".action-btn"))
           ) {
             return;
           }
+
           const flashcard = document.querySelector(".flashcard");
+          if (!flashcard) return;
+
+          // Kiểm tra xem dictionary panel có đang mở không
+          const dictionaryPanel = document.getElementById("dictionaryPanel");
+          if (dictionaryPanel && dictionaryPanel.style.display === "block") {
+            return; // Không lật thẻ nếu dictionary đang mở
+          }
+
+          // Thực hiện lật thẻ
           flashcard.classList.toggle("flipped");
+
+          // Phát âm thanh nếu cài đặt auto-play được bật và thẻ đang ở mặt trước
+          if (
+            this.settings.autoPlay &&
+            !flashcard.classList.contains("flipped")
+          ) {
+            const word = document.querySelector(".card-word").textContent;
+            this.playAudio(word);
+          }
+
+          // Cập nhật trạng thái từ nếu cần
+          const currentWord = this.vocabulary.find(
+            (word) =>
+              word.english === document.querySelector(".card-word").textContent
+          );
+          if (currentWord) {
+            currentWord.lastReviewed = Date.now();
+            this.saveVocabulary();
+          }
         }
 
         nextCard() {
@@ -1771,6 +2678,7 @@
             title.textContent = `Vocabulary - ${this.currentFolderName}`;
           }
 
+          // Event listeners cho input fields
           document
             .getElementById("englishWord")
             .addEventListener("keypress", (e) => {
@@ -1787,6 +2695,7 @@
               }
             });
 
+          // Keyboard shortcuts
           document.addEventListener("keydown", (e) => {
             if (
               document.getElementById("flashcardModal").style.display === "flex"
@@ -1809,11 +2718,13 @@
             }
           });
 
+          // Flashcard interaction
           const flashcard = document.querySelector(".flashcard");
           if (flashcard) {
             flashcard.addEventListener("click", (e) => this.flipCard(e));
           }
 
+          // Image upload handling
           const imageInput = document.getElementById("wordImage");
           if (imageInput) {
             imageInput.addEventListener("change", (e) =>
@@ -1821,11 +2732,82 @@
             );
           }
 
+          // Dictionary specific event listeners
+          const dictionaryPanel = document.getElementById("dictionaryPanel");
+          if (dictionaryPanel) {
+            // Ngăn chặn sự kiện click lan truyền từ dictionary panel
+            dictionaryPanel.addEventListener("click", (e) => {
+              e.stopPropagation();
+            });
+
+            // Event listener cho nút đóng dictionary
+            const closeBtn = dictionaryPanel.querySelector(
+              ".close-dictionary-btn"
+            );
+            if (closeBtn) {
+              closeBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                this.toggleDictionary();
+              });
+            }
+
+            // Ngăn chặn đóng dictionary khi click vào nội dung
+            const dictionaryContent = dictionaryPanel.querySelector(
+              ".dictionary-content"
+            );
+            if (dictionaryContent) {
+              dictionaryContent.addEventListener("click", (e) => {
+                e.stopPropagation();
+              });
+            }
+          }
+
+          // Handle dictionary overlay
+          const overlay = document.querySelector(".dictionary-overlay");
+          if (!overlay) {
+            const newOverlay = document.createElement("div");
+            newOverlay.className = "dictionary-overlay";
+            document.body.appendChild(newOverlay);
+
+            newOverlay.addEventListener("click", (e) => {
+              if (e.target === newOverlay) {
+                this.toggleDictionary();
+              }
+            });
+          }
+
+          // Setup touch events
           this.setupTouchEvents();
 
+          // Apply dark mode if enabled
           if (this.settings.darkMode) {
             document.body.classList.add("dark-mode");
           }
+
+          // Settings button event listeners
+          const settingsBtn = document.querySelector(".settings-btn");
+          if (settingsBtn) {
+            settingsBtn.addEventListener("click", () => this.openSettings());
+          }
+
+          // Dictionary buttons in flashcards
+          const dictionaryBtns = document.querySelectorAll(".dictionary-btn");
+          dictionaryBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              this.toggleDictionary();
+            });
+          });
+
+          // Audio buttons in flashcards
+          const audioBtns = document.querySelectorAll(".audio-btn");
+          audioBtns.forEach((btn) => {
+            btn.addEventListener("click", (e) => {
+              e.stopPropagation();
+              const word = document.querySelector(".card-word").textContent;
+              this.playAudio(word);
+            });
+          });
         }
 
         setupTouchEvents() {
