@@ -3043,21 +3043,25 @@
 
           this.closeStudyOptions();
 
+          // Lưu level hiện tại vào localStorage để các trang khác có thể truy cập
+          localStorage.setItem("study_mode_level", this.currentLevel);
+
           switch (mode) {
             case "regular":
+              // Giữ nguyên chế độ flashcard ở file hiện tại
               this.showFlashcards(this.currentLevel);
               break;
             case "quiz":
-              this.showNotification("Quiz mode coming soon!", "success");
+              // Chuyển đến trang quiz.html
+              window.location.href = "quiz.html";
               break;
             case "writing":
-              this.showNotification("Writing practice coming soon!", "success");
+              // Chuyển đến trang writing.html
+              window.location.href = "writing.html";
               break;
             case "listening":
-              this.showNotification(
-                "Listening practice coming soon!",
-                "success"
-              );
+              // Chuyển đến trang listening.html
+              window.location.href = "listening.html";
               break;
           }
         }
